@@ -1,0 +1,1125 @@
+{
+ "Resources": {
+  "HackathonVPCC2D39258": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.0.0.0/16",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/Resource"
+   }
+  },
+  "HackathonVPCPublicSubnet1SubnetA8DA00A0": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.0.0/18",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet1/Subnet"
+   }
+  },
+  "HackathonVPCPublicSubnet1RouteTableE0A42A5B": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet1/RouteTable"
+   }
+  },
+  "HackathonVPCPublicSubnet1RouteTableAssociation7D1126D2": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "HackathonVPCPublicSubnet1RouteTableE0A42A5B"
+    },
+    "SubnetId": {
+     "Ref": "HackathonVPCPublicSubnet1SubnetA8DA00A0"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet1/RouteTableAssociation"
+   }
+  },
+  "HackathonVPCPublicSubnet1DefaultRoute65D06622": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "HackathonVPCIGW5662F8EE"
+    },
+    "RouteTableId": {
+     "Ref": "HackathonVPCPublicSubnet1RouteTableE0A42A5B"
+    }
+   },
+   "DependsOn": [
+    "HackathonVPCVPCGW91C96ED0"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet1/DefaultRoute"
+   }
+  },
+  "HackathonVPCPublicSubnet1EIPF0E47FB7": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet1/EIP"
+   }
+  },
+  "HackathonVPCPublicSubnet1NATGatewayE03EA4EC": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "HackathonVPCPublicSubnet1EIPF0E47FB7",
+      "AllocationId"
+     ]
+    },
+    "SubnetId": {
+     "Ref": "HackathonVPCPublicSubnet1SubnetA8DA00A0"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet1"
+     }
+    ]
+   },
+   "DependsOn": [
+    "HackathonVPCPublicSubnet1DefaultRoute65D06622",
+    "HackathonVPCPublicSubnet1RouteTableAssociation7D1126D2"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet1/NATGateway"
+   }
+  },
+  "HackathonVPCPublicSubnet2SubnetB48E7D03": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.64.0/18",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet2/Subnet"
+   }
+  },
+  "HackathonVPCPublicSubnet2RouteTable72BD78F6": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet2/RouteTable"
+   }
+  },
+  "HackathonVPCPublicSubnet2RouteTableAssociation9B71FC10": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "HackathonVPCPublicSubnet2RouteTable72BD78F6"
+    },
+    "SubnetId": {
+     "Ref": "HackathonVPCPublicSubnet2SubnetB48E7D03"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet2/RouteTableAssociation"
+   }
+  },
+  "HackathonVPCPublicSubnet2DefaultRouteE52016B2": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "HackathonVPCIGW5662F8EE"
+    },
+    "RouteTableId": {
+     "Ref": "HackathonVPCPublicSubnet2RouteTable72BD78F6"
+    }
+   },
+   "DependsOn": [
+    "HackathonVPCVPCGW91C96ED0"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet2/DefaultRoute"
+   }
+  },
+  "HackathonVPCPublicSubnet2EIP3F353AB7": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet2/EIP"
+   }
+  },
+  "HackathonVPCPublicSubnet2NATGatewayEEE0135A": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "HackathonVPCPublicSubnet2EIP3F353AB7",
+      "AllocationId"
+     ]
+    },
+    "SubnetId": {
+     "Ref": "HackathonVPCPublicSubnet2SubnetB48E7D03"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PublicSubnet2"
+     }
+    ]
+   },
+   "DependsOn": [
+    "HackathonVPCPublicSubnet2DefaultRouteE52016B2",
+    "HackathonVPCPublicSubnet2RouteTableAssociation9B71FC10"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PublicSubnet2/NATGateway"
+   }
+  },
+  "HackathonVPCPrivateSubnet1SubnetE2B15FBD": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.128.0/18",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Private"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PrivateSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet1/Subnet"
+   }
+  },
+  "HackathonVPCPrivateSubnet1RouteTableAA1BA462": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PrivateSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet1/RouteTable"
+   }
+  },
+  "HackathonVPCPrivateSubnet1RouteTableAssociation2F471068": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "HackathonVPCPrivateSubnet1RouteTableAA1BA462"
+    },
+    "SubnetId": {
+     "Ref": "HackathonVPCPrivateSubnet1SubnetE2B15FBD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet1/RouteTableAssociation"
+   }
+  },
+  "HackathonVPCPrivateSubnet1DefaultRouteD42A0846": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "HackathonVPCPublicSubnet1NATGatewayE03EA4EC"
+    },
+    "RouteTableId": {
+     "Ref": "HackathonVPCPrivateSubnet1RouteTableAA1BA462"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet1/DefaultRoute"
+   }
+  },
+  "HackathonVPCPrivateSubnet2Subnet43E40910": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.192.0/18",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Private"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PrivateSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet2/Subnet"
+   }
+  },
+  "HackathonVPCPrivateSubnet2RouteTable143C36B7": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC/PrivateSubnet2"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet2/RouteTable"
+   }
+  },
+  "HackathonVPCPrivateSubnet2RouteTableAssociation71952AB1": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "HackathonVPCPrivateSubnet2RouteTable143C36B7"
+    },
+    "SubnetId": {
+     "Ref": "HackathonVPCPrivateSubnet2Subnet43E40910"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet2/RouteTableAssociation"
+   }
+  },
+  "HackathonVPCPrivateSubnet2DefaultRouteE3390A4D": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "HackathonVPCPublicSubnet2NATGatewayEEE0135A"
+    },
+    "RouteTableId": {
+     "Ref": "HackathonVPCPrivateSubnet2RouteTable143C36B7"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/PrivateSubnet2/DefaultRoute"
+   }
+  },
+  "HackathonVPCIGW5662F8EE": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "FinalHackathonStack/HackathonVPC"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/IGW"
+   }
+  },
+  "HackathonVPCVPCGW91C96ED0": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "InternetGatewayId": {
+     "Ref": "HackathonVPCIGW5662F8EE"
+    },
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/VPCGW"
+   }
+  },
+  "HackathonVPCRestrictDefaultSecurityGroupCustomResource282B715A": {
+   "Type": "Custom::VpcRestrictDefaultSG",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E",
+      "Arn"
+     ]
+    },
+    "DefaultSecurityGroupId": {
+     "Fn::GetAtt": [
+      "HackathonVPCC2D39258",
+      "DefaultSecurityGroup"
+     ]
+    },
+    "Account": {
+     "Ref": "AWS::AccountId"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/HackathonVPC/RestrictDefaultSecurityGroupCustomResource/Default"
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ],
+    "Policies": [
+     {
+      "PolicyName": "Inline",
+      "PolicyDocument": {
+       "Version": "2012-10-17",
+       "Statement": [
+        {
+         "Effect": "Allow",
+         "Action": [
+          "ec2:AuthorizeSecurityGroupIngress",
+          "ec2:AuthorizeSecurityGroupEgress",
+          "ec2:RevokeSecurityGroupIngress",
+          "ec2:RevokeSecurityGroupEgress"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":ec2:",
+             {
+              "Ref": "AWS::Region"
+             },
+             ":",
+             {
+              "Ref": "AWS::AccountId"
+             },
+             ":security-group/",
+             {
+              "Fn::GetAtt": [
+               "HackathonVPCC2D39258",
+               "DefaultSecurityGroup"
+              ]
+             }
+            ]
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role"
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "__entrypoint__.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs24.x",
+    "Description": "Lambda function for removing all inbound/outbound rules from the VPC default security group"
+   },
+   "DependsOn": [
+    "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler",
+    "aws:asset:path": "asset.02b51ab524e7bcf8f477de3e71e5f9a72e448301b26ba62e9e75a14f9c55a093",
+    "aws:asset:property": "Code"
+   }
+  },
+  "PostgresSG88C833CF": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Allow inbound access to Postgres",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow Postgres access from anywhere",
+      "FromPort": 5432,
+      "IpProtocol": "tcp",
+      "ToPort": 5432
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/PostgresSG/Resource"
+   }
+  },
+  "PostgresDBSubnetGroup5D444ECC": {
+   "Type": "AWS::RDS::DBSubnetGroup",
+   "Properties": {
+    "DBSubnetGroupDescription": "Subnet group for PostgresDB database",
+    "SubnetIds": [
+     {
+      "Ref": "HackathonVPCPrivateSubnet1SubnetE2B15FBD"
+     },
+     {
+      "Ref": "HackathonVPCPrivateSubnet2Subnet43E40910"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/PostgresDB/SubnetGroup/Default"
+   }
+  },
+  "FinalHackathonStackPostgresDBSecretBCA7B9753fdaad7efa858a3daf9490cf0a702aeb": {
+   "Type": "AWS::SecretsManager::Secret",
+   "Properties": {
+    "Description": {
+     "Fn::Join": [
+      "",
+      [
+       "Generated by the CDK for stack: ",
+       {
+        "Ref": "AWS::StackName"
+       }
+      ]
+     ]
+    },
+    "GenerateSecretString": {
+     "ExcludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\",
+     "GenerateStringKey": "password",
+     "PasswordLength": 30,
+     "SecretStringTemplate": "{\"username\":\"postgres\"}"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/PostgresDB/Secret/Resource"
+   }
+  },
+  "PostgresDBSecretAttachmentED0FD794": {
+   "Type": "AWS::SecretsManager::SecretTargetAttachment",
+   "Properties": {
+    "SecretId": {
+     "Ref": "FinalHackathonStackPostgresDBSecretBCA7B9753fdaad7efa858a3daf9490cf0a702aeb"
+    },
+    "TargetId": {
+     "Ref": "PostgresDB113281D2"
+    },
+    "TargetType": "AWS::RDS::DBInstance"
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/PostgresDB/Secret/Attachment/Resource"
+   }
+  },
+  "PostgresDB113281D2": {
+   "Type": "AWS::RDS::DBInstance",
+   "Properties": {
+    "AllocatedStorage": "100",
+    "CopyTagsToSnapshot": true,
+    "DBInstanceClass": "db.t3.medium",
+    "DBName": "hackathon_onprem",
+    "DBSubnetGroupName": {
+     "Ref": "PostgresDBSubnetGroup5D444ECC"
+    },
+    "DeletionProtection": false,
+    "Engine": "postgres",
+    "EngineVersion": "15",
+    "MasterUserPassword": {
+     "Fn::Join": [
+      "",
+      [
+       "{{resolve:secretsmanager:",
+       {
+        "Ref": "FinalHackathonStackPostgresDBSecretBCA7B9753fdaad7efa858a3daf9490cf0a702aeb"
+       },
+       ":SecretString:password::}}"
+      ]
+     ]
+    },
+    "MasterUsername": "postgres",
+    "PubliclyAccessible": false,
+    "StorageType": "gp2",
+    "VPCSecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "PostgresSG88C833CF",
+       "GroupId"
+      ]
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/PostgresDB/Resource"
+   }
+  },
+  "MSKSG7CA9011D": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Security group for MSK Cluster",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "HackathonVPCC2D39258"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/MSKSG/Resource"
+   }
+  },
+  "MSKSGfromFinalHackathonStackMSKSG4AFE4CC0ALLTRAFFIC5A72F28D": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "Self-referencing rule for MSK",
+    "GroupId": {
+     "Fn::GetAtt": [
+      "MSKSG7CA9011D",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "-1",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "MSKSG7CA9011D",
+      "GroupId"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/MSKSG/from FinalHackathonStackMSKSG4AFE4CC0:ALL TRAFFIC"
+   }
+  },
+  "KafkaCluster": {
+   "Type": "AWS::MSK::Cluster",
+   "Properties": {
+    "BrokerNodeGroupInfo": {
+     "ClientSubnets": [
+      {
+       "Ref": "HackathonVPCPrivateSubnet1SubnetE2B15FBD"
+      },
+      {
+       "Ref": "HackathonVPCPrivateSubnet2Subnet43E40910"
+      }
+     ],
+     "InstanceType": "kafka.m5.large",
+     "SecurityGroups": [
+      {
+       "Fn::GetAtt": [
+        "MSKSG7CA9011D",
+        "GroupId"
+       ]
+      }
+     ],
+     "StorageInfo": {
+      "EBSStorageInfo": {
+       "VolumeSize": 1000
+      }
+     }
+    },
+    "ClusterName": "hackathon-msk-cluster",
+    "KafkaVersion": "3.7.x",
+    "NumberOfBrokerNodes": 2
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/KafkaCluster"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/81WwY7jNgz9ltVxoXE7s8Accst420XQYhMk0zk0WBSMzDjayJJLUcm6Rv69sCUnnmkKFOgecrJEi+Tj0yPth+zh8SH78R0c/Z0q9ndGb7J2xaD2Eo7+jxbVQ9a+1GrdCl1Pi4LQe/RiIt4LKSr4Nv0rbk5fZL61L4tcLsLGaLUKG4u8bgUcQBvYaKO5+d1ZTK6HWs2KtFa6oCfj1P4cto5BZvXc/grBqp2YMAWUQteHx/zNcfBel3ZWHx4TvrnNCYG1sxGavBEUPZCi+Az8CRiP0IjJWrwXX24G4G2g+FeaeolFYXWrpQuMz7AxeLFfbFPvndJ94PPhbvHTbNE9LtHlgvQBGL+7Yrdg/A3cxf+DcTtIbgRGVOHMMpLFs4bi7Eu7KTOoXYWW5QpVIM3NJ3KhXrcd2CGVMe44NWYeeOOCLYamKdAr0vXryotiZssOzzIYFJN1KxTYmTXaYrREX+WsRdW5DhM6WP1nwMRPf529OQ2d74SmizCOHPt0XPk/DCnASVLhs/YjMGzA48x6BqvwFVEFGuzyL8hxLO58hYSVO4BZOKNVIyYdWibXCCn8OJlPA6TXSmxzLyat8P3yuak7KaUpIE5SoC11J682rdKJDkw0vCD5HkcrtsGY8zZp7qujsekkRQ0EFTJSj+dnqLRp0nGvbWnwN4+0dNwrbVrXRquL6Iasr91CXTtiv0Qoltg7PIHa98Um2rYQDHeBLVQ4ICkS1Z8HmxQ6sT4qUxEWaFmDOX/dI2+Djt/qQo4u7L+R/Pbuhl+Ij0+jTHJQxgoV9cMZraKmz/sLnrnoX44qokjIEstzK3TCDWMurrhdi43flAkF5jsgUIzkRylA4dwuwPujoyInzUga8h3YsvtDig10DUqqc1D7SUYkvgILJVLWxm4h7OcHIT8DlciXsbJuE/gEhvv3o+DX3U6y8vss39rcBM9IJ7lE7wIplHnw7KphG7ul+2pef78gd9AF0hN4lFPvkVcMpbZl5zMPXAc+yUXDO2d/+JDdf8ju79999VrfUbCsK8yW8fk3pYcXl30KAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "FinalHackathonStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "DBEndpoint": {
+   "Value": {
+    "Fn::GetAtt": [
+     "PostgresDB113281D2",
+     "Endpoint.Address"
+    ]
+   }
+  },
+  "DBName": {
+   "Value": "hackathon_onprem"
+  },
+  "KafkaClusterArn": {
+   "Value": {
+    "Ref": "KafkaCluster"
+   }
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

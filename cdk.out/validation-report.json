@@ -1,0 +1,64 @@
+{
+  "version": "54.0.0",
+  "title": "Validation Report",
+  "pluginReports": [
+    {
+      "pluginName": "CloudFormation Validate",
+      "pluginVersion": "1.5.0",
+      "conclusion": "success",
+      "violations": [
+        {
+          "ruleName": "W2508",
+          "description": "SecurityGroupIngress: Security group allows 0.0.0.0/0 access to sensitive port 5432 (range 5432-5432)",
+          "suggestedFix": "Restrict the CIDR range to specific IP addresses",
+          "severity": "warning",
+          "ruleMetadata": {
+            "category": "Security"
+          },
+          "violatingConstructs": [
+            {
+              "constructPath": "FinalHackathonStack/PostgresSG/Resource",
+              "constructFqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+              "libraryVersion": "2.262.0",
+              "cloudFormationResource": {
+                "templatePath": "FinalHackathonStack.template.json",
+                "logicalId": "PostgresSG88C833CF",
+                "propertyPaths": [
+                  "Properties.SecurityGroupIngress"
+                ]
+              },
+              "stackTraces": [
+                "...aws-cdk-lib, jsii runtime, node internals...",
+                "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+              ]
+            }
+          ]
+        },
+        {
+          "ruleName": "W9008",
+          "description": "RDS instance should have StorageEncrypted set to true",
+          "suggestedFix": "Set StorageEncrypted to true",
+          "severity": "warning",
+          "ruleMetadata": {
+            "category": "Security"
+          },
+          "violatingConstructs": [
+            {
+              "constructPath": "FinalHackathonStack/PostgresDB/Resource",
+              "constructFqn": "aws-cdk-lib.aws_rds.CfnDBInstance",
+              "libraryVersion": "2.262.0",
+              "cloudFormationResource": {
+                "templatePath": "FinalHackathonStack.template.json",
+                "logicalId": "PostgresDB113281D2"
+              },
+              "stackTraces": [
+                "...aws-cdk-lib, jsii runtime, node internals...",
+                "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

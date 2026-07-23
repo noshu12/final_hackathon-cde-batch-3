@@ -1,0 +1,827 @@
+{
+  "/FinalHackathonStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "ipAddresses": "*",
+        "maxAzs": "*"
+      }
+    }
+  ],
+  "/FinalHackathonStack/Custom::VpcRestrictDefaultSGCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/FinalHackathonStack/PostgresSG": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "vpc": "*",
+        "allowAllOutbound": true,
+        "description": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addIngressRule": [
+          {
+            "canInlineRule": true,
+            "connections": "*",
+            "uniqueId": "*"
+          },
+          {},
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "vpc": "*",
+        "deletionProtection": false,
+        "removalPolicy": "destroy",
+        "securityGroups": [
+          "*"
+        ],
+        "vpcSubnets": {
+          "subnetType": "Private"
+        },
+        "engine": {
+          "engineType": "*",
+          "engineVersion": {
+            "fullVersion": "*",
+            "majorVersion": "*"
+          },
+          "parameterGroupFamily": "*",
+          "singleUserRotationApplication": "*",
+          "engineFamily": "*",
+          "supportsReadReplicaBackups": "*",
+          "defaultUsername": "*"
+        },
+        "databaseName": "*",
+        "instanceType": "*",
+        "credentials": "*"
+      }
+    }
+  ],
+  "/FinalHackathonStack/MSKSG": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "vpc": "*",
+        "allowAllOutbound": true,
+        "description": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addIngressRule": [
+          "*",
+          {},
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/FinalHackathonStack/KafkaCluster": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "KafkaCluster"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/DBEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DBEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/DBName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DBName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/KafkaClusterArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "KafkaClusterArn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCC2D39258"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addNatGateway": [
+          "*"
+        ]
+      }
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": true,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addNatGateway": [
+          "*"
+        ]
+      }
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "availabilityZone": "*",
+        "vpcId": "*",
+        "cidrBlock": "*",
+        "mapPublicIpOnLaunch": false,
+        "ipv6CidrBlock": "*",
+        "assignIpv6AddressOnCreation": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {}
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/IGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCIGW5662F8EE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/VPCGW": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCVPCGW91C96ED0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/RestrictDefaultSecurityGroupCustomResource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/FinalHackathonStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/PostgresSG/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PostgresSG88C833CF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/SubnetGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "description": "*",
+        "vpc": "*",
+        "vpcSubnets": {
+          "subnetType": "Private"
+        },
+        "removalPolicy": "*"
+      }
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/Secret": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "encryptionKey": "*",
+        "secretName": "*",
+        "replicaRegions": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "username": "*",
+        "secretName": "*",
+        "encryptionKey": "*",
+        "excludeCharacters": "*",
+        "replaceOnPasswordCriteriaChanges": true,
+        "replicaRegions": "*"
+      }
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PostgresDB113281D2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/MSKSG/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "MSKSG7CA9011D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/MSKSG/from FinalHackathonStackMSKSG4AFE4CC0:ALL TRAFFIC": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "MSKSGfromFinalHackathonStackMSKSG4AFE4CC0ALLTRAFFIC5A72F28D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/CDKMetadata/Condition": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadataAvailable"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet1SubnetA8DA00A0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet1RouteTableE0A42A5B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet1RouteTableAssociation7D1126D2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet1DefaultRoute65D06622"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:208 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib, jsii runtime..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1/EIP": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet1EIPF0E47FB7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet1/NATGateway": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet1NATGatewayE03EA4EC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet2SubnetB48E7D03"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet2RouteTable72BD78F6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet2RouteTableAssociation9B71FC10"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:268 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet2DefaultRouteE52016B2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:208 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib, jsii runtime..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2/EIP": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet2EIP3F353AB7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PublicSubnet2/NATGateway": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPublicSubnet2NATGatewayEEE0135A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet1/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet1SubnetE2B15FBD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet1/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet1RouteTableAA1BA462"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet1/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet1RouteTableAssociation2F471068"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet1/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet1DefaultRouteD42A0846"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet2/Subnet": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet2Subnet43E40910"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet2/RouteTable": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet2RouteTable143C36B7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet2/RouteTableAssociation": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet2RouteTableAssociation71952AB1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...C:\\Users\\STARHIVE\\AppData\\Local\\Temp\\jsii-kernel-ZZS29R\\node_modules\\aws-cdk-lib\\aws-ec2\\lib\\vpc.js:1:270 in aws-cdk-lib...",
+        "Array.forEach (:)",
+        "...aws-cdk-lib..."
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/PrivateSubnet2/DefaultRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCPrivateSubnet2DefaultRouteE3390A4D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/HackathonVPC/RestrictDefaultSecurityGroupCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HackathonVPCRestrictDefaultSecurityGroupCustomResource282B715A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/SubnetGroup/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PostgresDBSubnetGroup5D444ECC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/Secret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "FinalHackathonStackPostgresDBSecretBCA7B9753fdaad7efa858a3daf9490cf0a702aeb"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/Secret/Attachment": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "secret": "*",
+        "target": "*"
+      }
+    }
+  ],
+  "/FinalHackathonStack/PostgresDB/Secret/Attachment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PostgresDBSecretAttachmentED0FD794"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, jsii runtime...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}
