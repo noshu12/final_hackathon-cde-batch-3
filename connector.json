@@ -1,0 +1,49 @@
+{
+  "connectorName": "my-postgres-connector",
+  "kafkaCluster": {
+    "apacheKafkaCluster": {
+      "vpc": {
+        "securityGroups": ["sg-03db59f56bed455c1"],
+        "subnets": ["subnet-06a64bac447daad97", "subnet-0a785403e60f5b1bb"]
+      },
+      "bootstrapServers": "b-2.hackathonmskcluster.ou3kqd.c2.kafka.us-east-1.amazonaws.com:9094,b-1.hackathonmskcluster.ou3kqd.c2.kafka.us-east-1.amazonaws.com:9094"
+    }
+  },
+  "kafkaClusterClientAuthentication": {
+    "authenticationType": "NONE"
+  },
+  "kafkaClusterEncryptionInTransit": {
+    "encryptionType": "PLAINTEXT"
+  },
+  "kafkaConnectVersion": "2.7.1",
+  "capacity": {
+    "autoScaling": {
+      "maxWorkerCount": 2,
+      "mcuCount": 1,
+      "minWorkerCount": 1,
+      "scaleInPolicy": {
+        "cpuUtilizationPercentage": 70
+      },
+      "scaleOutPolicy": {
+        "cpuUtilizationPercentage": 80
+      }
+    }
+  },
+  "connectorConfiguration": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "connection.url": "jdbc:postgresql://finalhackathonstack-postgresdb113281d2-ngpye8fmcnj7.cyvia6yge9y0.us-east-1.rds.amazonaws.com/hackathon_onprem",
+    "connection.user": "postgres",
+    "connection.password": "MyNewPassword123!",
+    "topics": "kafka-topic"
+  },
+  "serviceExecutionRoleArn": "arn:aws:iam::137738968617:role/kafka-connect-iam-role",
+  "plugins": [
+    {
+      "customPlugin": {
+        "customPluginArn": "arn:aws:kafkaconnect:us-east-1:137738968617:custom-plugin/postgres-jdbc-plugin/c4f844bb-f309-47e7-ac55-1ed08fb4ba5b-4",
+        "revision": 1
+      }
+    }
+  ]
+}

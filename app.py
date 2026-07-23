@@ -3,7 +3,7 @@ import os
 
 import aws_cdk as cdk
 
-from final hackathon.final hackathon_stack import FinalHackathonStack
+from final_hackathon.final_hackathon_stack import FinalHackathonStack
 
 
 app = cdk.App()

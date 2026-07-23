@@ -1,0 +1,89 @@
+[0m00:26:24.725904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026C012896A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026C039BB750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026C039BBED0>]}
+
+
+============================== 00:26:24.757824 | ae37cd1e-aac8-4881-b119-cf779eec1c99 ==============================
+[0m00:26:24.757824 [info ] [MainThread]: Running with dbt=1.12.0
+[0m00:26:24.765424 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\STARHIVE\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'invocation_command': 'dbt init hackathon_transform', 'log_path': 'logs'}
+[0m00:26:24.919849 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\STARHIVE\.dbt
+[0m00:26:24.962637 [debug] [MainThread]: Starter project path: D:\NOUSHAD ALAM\CODE FILES\FINAL HACKATHON\.venv\Lib\site-packages\dbt\include\starter_project
+[0m00:26:25.236099 [info ] [MainThread]: Setting up your profile.
+[0m00:27:43.273350 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m00:27:43.277253 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m00:27:43.278469 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m00:34:26.937403 [info ] [MainThread]: Profile hackathon_transform written to C:\Users\STARHIVE\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+[0m00:34:26.974103 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m00:34:26.978739 [info ] [MainThread]: dbt version: 1.12.0
+[0m00:34:26.980025 [info ] [MainThread]: python version: 3.13.11
+[0m00:34:26.981427 [info ] [MainThread]: python path: D:\NOUSHAD ALAM\CODE FILES\FINAL HACKATHON\.venv\Scripts\python.exe
+[0m00:34:26.983562 [info ] [MainThread]: os info: Windows-11-10.0.22000-SP0
+[0m00:34:27.319274 [info ] [MainThread]: Using profiles dir at C:\Users\STARHIVE\.dbt
+[0m00:34:27.320625 [info ] [MainThread]: Using profiles.yml file at C:\Users\STARHIVE\.dbt\profiles.yml
+[0m00:34:27.321539 [info ] [MainThread]: Using dbt_project.yml file at D:\NOUSHAD ALAM\CODE FILES\FINAL HACKATHON\hackathon_transform\dbt_project.yml
+[0m00:34:27.325087 [info ] [MainThread]: adapter type: snowflake
+[0m00:34:27.326129 [info ] [MainThread]: adapter version: 1.12.0
+[0m00:34:27.621383 [info ] [MainThread]: Configuration:
+[0m00:34:27.624663 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:34:27.626548 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:34:27.627677 [info ] [MainThread]: Required dependencies:
+[0m00:34:27.634689 [debug] [MainThread]: Executing "git --help"
+[0m00:34:27.767066 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:34:27.770444 [debug] [MainThread]: STDERR: "b''"
+[0m00:34:27.772058 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:34:27.773398 [info ] [MainThread]: Connection:
+[0m00:34:27.774470 [info ] [MainThread]:   account: POMXEEU-LU82916
+[0m00:34:27.775393 [info ] [MainThread]:   user: noushadalam45
+[0m00:34:27.776154 [info ] [MainThread]:   database: HACKATHON_IOT
+[0m00:34:27.776892 [info ] [MainThread]:   warehouse: ACCOUNTADMIN
+[0m00:34:27.777897 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m00:34:27.779789 [info ] [MainThread]:   schema: RAW
+[0m00:34:27.781529 [info ] [MainThread]:   authenticator: None
+[0m00:34:27.784081 [info ] [MainThread]:   oauth_client_id: None
+[0m00:34:27.785526 [info ] [MainThread]:   query_tag: None
+[0m00:34:27.788383 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:34:27.790996 [info ] [MainThread]:   host: None
+[0m00:34:27.794401 [info ] [MainThread]:   port: None
+[0m00:34:27.796411 [info ] [MainThread]:   proxy_host: None
+[0m00:34:27.798270 [info ] [MainThread]:   proxy_port: None
+[0m00:34:27.800457 [info ] [MainThread]:   protocol: None
+[0m00:34:27.802788 [info ] [MainThread]:   connect_retries: 1
+[0m00:34:27.807028 [info ] [MainThread]:   connect_timeout: None
+[0m00:34:27.810516 [info ] [MainThread]:   retry_on_database_errors: False
+[0m00:34:27.813353 [info ] [MainThread]:   retry_all: False
+[0m00:34:27.815326 [info ] [MainThread]:   insecure_mode: False
+[0m00:34:27.817927 [info ] [MainThread]:   reuse_connections: True
+[0m00:34:27.820521 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m00:34:27.822414 [info ] [MainThread]:   workload_identity_provider: None
+[0m00:34:27.823904 [info ] [MainThread]:   workload_identity_entra_resource: None
+[0m00:34:27.825133 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m00:34:27.830693 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m00:34:29.070059 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:34:29.077095 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:34:29.078162 [debug] [MainThread]: On debug: select 1 as id
+[0m00:34:29.078751 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:34:33.415803 [debug] [MainThread]: SQL status: SUCCESS 1 in 4.337 seconds
+[0m00:34:33.420602 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:34:33.423080 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:34:33.426288 [info ] [MainThread]: Your new dbt project "hackathon_transform" was created!
+Initialized new project in D:\NOUSHAD ALAM\CODE FILES\FINAL HACKATHON\hackathon_transform\hackathon_transform
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:34:33.437958 [debug] [MainThread]: Command `dbt init` succeeded at 00:34:33.435893 after 489.71 seconds
+[0m00:34:33.441030 [debug] [MainThread]: Connection 'debug' was left open.
+[0m00:34:33.443497 [debug] [MainThread]: On debug: Close
+[0m00:34:33.708285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026C0556B950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026C055B7890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026C05572F10>]}
+[0m00:34:33.710240 [debug] [MainThread]: Flushing usage events
+[0m00:34:35.539265 [debug] [MainThread]: An error was encountered while trying to flush usage events
