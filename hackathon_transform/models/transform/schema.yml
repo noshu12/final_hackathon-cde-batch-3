@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: HACKATHON_IOT
+    database: HACKATHON_IOT
+    schema: RAW
+    tables:
+      - name: RAW_IOT_EVENTS
+
+models:
+  - name: iot_validated
+    description: "Silver model for validated IoT events"
+    columns:
+      - name: device_id
+        tests:
+          - not_null
+      - name: validation_status
+        tests:
+          - not_null
+
+  - name: device_daily
+    description: "Gold model for daily device analytics"
+    columns:
+      - name: device_id
+        tests:
+          - not_null
